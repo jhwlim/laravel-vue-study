@@ -1,0 +1,11 @@
+GET http://localhost:8000/api/user/1
+
+###
+POST http://localhost:8000/api/user
+Content-Type: application/json
+
+{
+    "name" : "test01",
+    "password" : "test01",
+    "email" : "test01@test.test"
+}
