@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: "LoginView",
     data: function() {
@@ -18,6 +20,10 @@ export default {
     methods: {
         submitLoginForm() {
             console.log(this.id, this.pwd);
+            axios.defaults.withCredentials = true;
+            axios.get('/sanctum/csrf-cookie').then(response => {
+                console.log(response);
+            });
         }
     }
 }
