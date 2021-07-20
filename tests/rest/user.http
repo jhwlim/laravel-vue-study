@@ -9,7 +9,3 @@ Content-Type: application/json
     "password" : "test01",
     "email" : "test01@test.test"
 }
-
-###
-GET http://localhost:8000/api
-Withcredentials: true
