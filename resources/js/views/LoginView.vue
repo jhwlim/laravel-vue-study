@@ -22,7 +22,10 @@ export default {
             console.log(this.id, this.pwd);
             axios.defaults.withCredentials = true;
             axios.get('/sanctum/csrf-cookie').then(response => {
-                console.log(response);
+                axios.post('/api/login', {
+                    name: this.id,
+                    password: this.pwd,
+                });
             });
         }
     }

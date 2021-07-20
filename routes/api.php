@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::prefix('/user')->group(function() {
     Route::get('/{id}', [UserController::class, 'show']);
     Route::post('', [UserController::class, 'store']);
 });
+
+Route::post('/login', [LoginController::class, 'login']);
