@@ -3,6 +3,7 @@
         ID : <input type="text" v-model="id"> <br>
         PWD : <input type="text" v-model="pwd"> <br>
         <button @click="submitLoginForm()">Submit</button>
+        <button @click="showAuthUser()">AuthUser</button>
     </div>
 </template>
 
@@ -25,9 +26,17 @@ export default {
                 axios.post('/api/login', {
                     name: this.id,
                     password: this.pwd,
+                })
+                .then(response => {
+                    console.log(response);
                 });
             });
-        }
+        },
+        showAuthUser() {
+            axios.get('/api/auth/user').then(response => {
+                console.log(response);
+            });
+        },
     }
 }
 </script>

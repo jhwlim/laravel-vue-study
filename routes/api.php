@@ -26,3 +26,5 @@ Route::prefix('/user')->group(function() {
 });
 
 Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/auth/user', [UserController::class, 'getAuthUser']);
